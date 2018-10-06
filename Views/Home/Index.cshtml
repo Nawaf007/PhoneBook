@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1 Style=" text-align:center">PhoneBook</h1>
+    <p class="lead" Style=" text-align:center">An innovative way to store your precsious contacts.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1>Contacts</h1>
+        <p>
+            Total Count = @ViewBag.PersonCount
+        </p>
+        <p><a class="btn btn-default" href="/People/Index">All Contacts &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Birthdays (in 10 days)</h2>
+        <ul>
+            @foreach (var item in @ViewBag.Birthdays)
+            {
+                <li>
+                    @item.FirstName
+                    @item.MiddleName
+                    @item.LastName
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Updated (Last 7 days)</h2>
+        <ul>
+            @foreach (var item in @ViewBag.Updated)
+            {
+                <li>
+                    @item.FirstName
+                    @item.MiddleName
+                    @item.LastName
+                </li>
+            }
+        </ul>
+    </div>
+</div>
